@@ -1,5 +1,7 @@
-﻿using System;
+﻿using STSdb4.Database;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,7 @@ namespace TestSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainFrom());
+            Application.Run(new TestGenerator());
         }
     }
 }
