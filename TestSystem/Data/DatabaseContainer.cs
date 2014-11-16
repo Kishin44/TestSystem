@@ -10,19 +10,20 @@ namespace TestSystem
 {
     public class DatabaseContainer : IDisposable
     {
-        IStorageEngine Engine;
+        private IStorageEngine Engine;
 
-        public ITable<int, StudentRecord> StudentsTable { get; private set; }
-
-        public DatabaseContainer()
-            :this("main.stsdb4")
-        {           
-        }
+        public ITable<int, Student> Students { get; private set; }
+        public ITable<int, Discipline> Disciplines { get; private set; }
+        public ITable<int, Chapter> Chapters { get; private set; }
+        public ITable<int, Question> Questions { get; private set; }
 
         public DatabaseContainer(string FileName)
         {
             Engine = STSdb.FromFile(Path.Combine(Environment.CurrentDirectory, FileName));
-            StudentsTable = Engine.OpenXTable<int, StudentRecord>("Student Record");
+            Students = Engine.OpenXTable<int, Student>("Student");
+            Disciplines = Engine.OpenXTable<int, Discipline>("Disciplines");
+            Chapters = Engine.OpenXTable<int, Chapter>("Chapters");
+            Questions = Engine.OpenXTable<int, Question>("Questions");
         }
 
         public void Commit()
@@ -33,14 +34,6 @@ namespace TestSystem
         {
             Engine.Commit();
             Engine.Dispose();
-        }
-
-        public IEnumerable<StudentRecord> GetStudents()
-        {
-            foreach (var item in StudentsTable)
-            {
-                yield return item.Value;
-            }
         }
     }
 }

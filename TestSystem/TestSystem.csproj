@@ -63,6 +63,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewQuestionForm.Designer.cs">
+      <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NewQuestionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\NewQuestionControl.Designer.cs">
+      <DependentUpon>NewQuestionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Chapter.cs" />
     <Compile Include="Data\DatabaseContainer.cs" />
     <Compile Include="Controls\QuestionsControl.cs">
       <SubType>UserControl</SubType>
@@ -70,6 +83,20 @@
     <Compile Include="Controls\QuestionsControl.Designer.cs">
       <DependentUpon>QuestionsControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Discipline.cs" />
+    <Compile Include="NameDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NameDialogForm.Designer.cs">
+      <DependentUpon>NameDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewChapterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewChapterForm.Designer.cs">
+      <DependentUpon>NewChapterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Question.cs" />
     <Compile Include="TestGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,8 +113,20 @@
       <DependentUpon>StudentControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\StudentRecord.cs" />
+    <EmbeddedResource Include="AddNewQuestionForm.resx">
+      <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewQuestionControl.resx">
+      <DependentUpon>NewQuestionControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\QuestionsControl.resx">
       <DependentUpon>QuestionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NameDialogForm.resx">
+      <DependentUpon>NameDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewChapterForm.resx">
+      <DependentUpon>NewChapterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestGenerator.resx">
       <DependentUpon>TestGenerator.cs</DependentUpon>

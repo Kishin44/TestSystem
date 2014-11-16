@@ -10,6 +10,8 @@ namespace TestSystem
 {
     static class Program
     {
+        public static DatabaseContainer DatabaseContainer;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

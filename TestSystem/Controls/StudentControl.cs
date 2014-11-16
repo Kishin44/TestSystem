@@ -13,14 +13,14 @@ namespace TestSystem
 {
     public partial class StudentControl : UserControl
     {
-        ITable<int, StudentRecord> Students;
+        ITable<int, Student> Students;
 
         public StudentControl()
         {
             InitializeComponent();
         }
 
-        public void LoadStudents(ITable<int, StudentRecord> students)
+        public void LoadStudents(ITable<int, Student> students)
         {
             Students = students;
 
@@ -47,9 +47,10 @@ namespace TestSystem
             if (Students.Count() != 0)
                 index = (int)Students.Count();
 
-            var rec = new StudentRecord(textBox1.Text, "sadad");
+            var rec = new Student(textBox1.Text, "sadad");
             Students[index] = rec;
             listView1.Items.Add(rec.Name);
+            
         }
 
         private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
